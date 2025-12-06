@@ -1,27 +1,351 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt">
 <head>
     <meta charset="UTF-8">
+    <title>Sporto klubas „Faiteris“ - treniruotės vaikams ir jaunimui Vilniuje ir Jonavoje</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faiteris puslapis</title>
+    <meta name="description" content="Sporto klubas „Faiteris“ - fizinio aktyvumo, grappling, MMA, K-1 ir kikbokso treniruotės vaikams ir jaunimui Vilniuje ir Jonavoje. Registruokitės internetu.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <p class="title">
-      Bokso klubas "Faiteris"
-    </p>
-    <p class="intro">
-      Mūsų būreleliai vaikams, ypač patogus ir patrauklus pasirinkimas tiems. kurie gyvena Vilniuje, Pilaitėje ar aplinkiniuose rajonuose.
-    </p>
-    <img src="images/Kompiuterine_animacija_antraste-1-edited.webp"
-         alt="Vaikai mokosi robotikos" class="responsive-image">
-    <p>bla bla bla 123 123 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab laborum animi provident, consectetur harum et id ex sapiente, ad impedit non soluta quae! Praesentium amet, odio corporis nisi accusamus veritatis.</p>
-    <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScOUvPXCVpUuygdbUQD_TSf3axQzrNKGXCJ5cl5yPjJLrwEpA/viewform?embedded=true" width="1000" height="1450" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
-    <!-- open in new tab -->
-    <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScOUvPXCVpUuygdbUQD_TSf3axQzrNKGXCJ5cl5yPjJLrwEpA/viewform', '_blank')">
-      Registruotis į bureli
-    </button>
-  </div>
+<header>
+    <div class="nav">
+        <div class="logo">
+            <div class="logo-mark">F</div>
+            <div>
+                <div>SK „Faiteris“</div>
+                <div class="logo-sub">Treniruotės vaikams ir jaunimui</div>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="#miestai">Miestai</a>
+            <a href="#jonava">Jonava</a>
+            <a href="#vilnius">Vilnius</a>
+            <a href="#filosofija">Filosofija</a>
+        </nav>
+        <a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLScOUvPXCVpUuygdbUQD_TSf3axQzrNKGXCJ5cl5yPjJLrwEpA/viewform" target="_blank" rel="noopener noreferrer">
+            Registracija
+        </a>
+    </div>
+</header>
+
+<main class="page">
+    <section class="hero" id="virsus">
+        <div>
+            <div class="hero-kicker">Vilnius · Jonava · Vaikai ir jaunimas</div>
+            <h1 class="hero-title">
+                Sporto klubas <span class="hero-highlight">„Faiteris“</span> - daugiau nei treniruotės
+            </h1>
+            <p class="hero-text">
+                Čia kuriame stiprius žmones: ugdome charakterį, skatiname judėjimo džiaugsmą ir bendrystę. 
+                Treniruotėse deriname fizinį aktyvumą, savigyną ir kovos menus - saugioje, draugiškoje aplinkoje.
+            </p>
+            <div class="hero-actions">
+                <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScOUvPXCVpUuygdbUQD_TSf3axQzrNKGXCJ5cl5yPjJLrwEpA/viewform" target="_blank" rel="noopener noreferrer">
+                    Registruotis į treniruotes
+                </a>
+                <a class="btn-ghost" href="#miestai">
+                    <span class="icon">📍</span>
+                    Rasti artimiausią salę
+                </a>
+            </div>
+            <p class="hero-note">
+                Tvarkaraščiai ir laikai gali keistis, nes priklauso nuo salių nuomos. Naujausią informaciją visada patikslinsime jums užsiregistravus.
+            </p>
+        </div>
+        <aside class="hero-card" aria-label="Trumpa informacija apie klubą">
+            <div class="hero-card-inner">
+                <div class="badge">
+                    <span class="badge-dot"></span>
+                    <span>Judėjimo džiaugsmui ir pasitikėjimui savimi</span>
+                </div>
+                <h2>Treniruotės vaikams ir jaunimui</h2>
+                <p>
+                    Fizinio aktyvumo užsiėmimai, grappling imtynės, MMA, K-1, kikboksas ir savigyna - tiek pradedantiesiems, tiek pažengusiems.
+                </p>
+                <div class="hero-grid">
+                    <div class="hero-pill">
+                        <div class="hero-pill-label">Miestai</div>
+                        <div class="hero-pill-value">Vilnius ir Jonava</div>
+                    </div>
+                    <div class="hero-pill">
+                        <div class="hero-pill-label">Amžius</div>
+                        <div class="hero-pill-value">Vaikai, paaugliai, jaunimas</div>
+                    </div>
+                    <div class="hero-pill">
+                        <div class="hero-pill-label">Pagrindas</div>
+                        <div class="hero-pill-value">Judėjimas · Drausmė · Bendrystė</div>
+                    </div>
+                    <div class="hero-pill">
+                        <div class="hero-pill-label">Papildomai</div>
+                        <div class="hero-pill-value">Sveikatingumas ir projektai</div>
+                    </div>
+                </div>
+                <p class="hero-footnote">
+                    Kiekvienas, žengęs į salę, tampa geresne savo versija - treniruotė po treniruotės.
+                </p>
+            </div>
+        </aside>
+    </section>
+
+    <section class="section" id="miestai">
+        <h2>Pasirinkite miestą</h2>
+        <p>
+            Treniruotes organizuojame dviejuose miestuose. Paspauskite ant pasirinkto miesto ir peržiūrėkite salių adresus bei laikus.
+        </p>
+        <div class="city-grid">
+            <a class="city-card" href="#jonava">
+                <div class="city-name">
+                    <span>Jonava</span>
+                    <span>➜</span>
+                </div>
+                <div class="city-sub">2 sporto salės · vaikams ir vyresniems</div>
+                <div style="margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;">
+                    <span class="chip"><span class="chip-dot"></span>Fizinio aktyvumo treniruotės</span>
+                    <span class="chip"><span class="chip-dot"></span>Grappling, MMA, K-1</span>
+                </div>
+            </a>
+            <a class="city-card" href="#vilnius">
+                <div class="city-name">
+                    <span>Vilnius</span>
+                    <span>➜</span>
+                </div>
+                <div class="city-sub">3 sporto salės skirtinguose rajonuose</div>
+                <div style="margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;">
+                    <span class="chip"><span class="chip-dot"></span>Pilaitė · Šeškinė · kiti rajonai</span>
+                    <span class="chip"><span class="chip-dot"></span>MMA, K-1, savigyna</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="section" id="jonava">
+        <h2>Treniruotės Jonavoje</h2>
+        <p>
+            Jonavoje turime dvi sporto sales, kuriose vyksta fizinio aktyvumo užsiėmimai vaikams, grappling imtynės, MMA, K-1 ir kikboksas. 
+            Pasirinkite jums patogiausią vietą ir laiką.
+        </p>
+        <div class="gyms-grid">
+            <div class="gym-card">
+                <div class="gym-header">
+                    <div class="gym-title">Raimundo Samulevičiaus progimnazija</div>
+                    <div class="gym-area">Mažoji sporto salė</div>
+                    <div class="gym-address">Chemikų g. 140, Jonava</div>
+                </div>
+                <div class="pill-list">
+                    <span class="pill">Fizinio aktyvumo užsiėmimai vaikams</span>
+                    <span class="pill">Grappling imtynės</span>
+                    <span class="pill">MMA treniruotės</span>
+                </div>
+                <div class="gym-time">
+                    <strong>Dienos:</strong> pirmadienis, trečiadienis, penktadienis (I, III, V)
+                </div>
+                <p class="note">
+                    Tikslūs laikai gali būti koreguojami kiekvieną sezoną - patikslinsime po registracijos.
+                </p>
+            </div>
+
+            <div class="gym-card">
+                <div class="gym-header">
+                    <div class="gym-title">JŠPT sporto salė</div>
+                    <div class="gym-address">J. Basanavičiaus g. 7, Jonava</div>
+                </div>
+                <div class="pill-list">
+                    <span class="pill">K-1</span>
+                    <span class="pill">Kikboksas</span>
+                    <span class="pill">Fizinio aktyvumo užsiėmimai vyresniems</span>
+                    <span class="pill">Savigynos treniruotės</span>
+                </div>
+                <div class="gym-time">
+                    <strong>Dienos:</strong> antradienis ir ketvirtadienis (II, IV)
+                </div>
+                <p class="note">
+                    Skirta vyresniems dalyviams. Laikai gali kisti - aktualią informaciją atsiųsime el. paštu.
+                </p>
+            </div>
+        </div>
+        <div class="go-top">
+            <a href="#virsus">↳ Grįžti į viršų</a>
+        </div>
+    </section>
+
+    <section class="section" id="vilnius">
+        <h2>Treniruotės Vilniuje</h2>
+        <p>
+            Vilniuje treniruotės vyksta keliose mokyklose skirtinguose miesto rajonuose. 
+            Taip tėvai ir vaikai gali pasirinkti salę pagal tai, kuri vieta yra arčiausiai namų ar mokyklos.
+        </p>
+        <div class="gyms-grid">
+            <div class="gym-card">
+                <div class="gym-header">
+                    <div class="gym-title">Vilniaus Vydūno progimnazija (Pilaitė)</div>
+                    <div class="gym-address">Vilnius (Pilaitės mikrorajonas)</div>
+                </div>
+                <div class="pill-list">
+                    <span class="pill">Fizinio aktyvumo treniruotės vaikams</span>
+                    <span class="pill">Savigynos užsiėmimai</span>
+                    <span class="pill">Grappling imtynės</span>
+                    <span class="pill">MMA</span>
+                </div>
+                <div class="gym-time">
+                    <strong>Laikas:</strong> pirmadieniais ir trečiadieniais (I, III) - 15:30
+                </div>
+                <p class="note">
+                    Laikas gali būti koreguojamas kiekvienais metais. Visada pasitikslinsime registracijos metu.
+                </p>
+            </div>
+
+            <div class="gym-card">
+                <div class="gym-header">
+                    <div class="gym-title">Radvilų gimnazija (Šeškinė)</div>
+                    <div class="gym-address">Vilnius (Šeškinės mikrorajonas)</div>
+                    <div class="gym-area">Mažoji sporto salė</div>
+                </div>
+                <div class="pill-list">
+                    <span class="pill">MMA</span>
+                    <span class="pill">K-1</span>
+                    <span class="pill">Grappling imtynės</span>
+                    <span class="pill">Savigynos užsiėmimai</span>
+                </div>
+                <div class="gym-time">
+                    <strong>Laikas:</strong> pirmadienis, antradienis, trečiadienis ir ketvirtadienis (I, II, III, IV) – 18:00
+                </div>
+                <p class="note">
+                    Intensyvesnės treniruotės vyresniems vaikams ir jaunimui. Tvarkaraštis gali šiek tiek kisti.
+                </p>
+            </div>
+
+            <div class="gym-card">
+                <div class="gym-header">
+                    <div class="gym-title">Žygimanto Augusto progimnazija</div>
+                    <div class="gym-address">Vilnius</div>
+                </div>
+                <div class="pill-list">
+                    <span class="pill">Fizinio aktyvumo treniruotės vaikams</span>
+                    <span class="pill">Grappling imtynės</span>
+                    <span class="pill">Savigynos užsiėmimai</span>
+                </div>
+                <div class="gym-time">
+                    <strong>Laikas:</strong> antradieniais ir ketvirtadieniais (II, IV) - 15:00
+                </div>
+                <p class="note">
+                    Skirta vaikams, norintiems daugiau judėjimo, pasitikėjimo ir bazinių savigynos įgūdžių.
+                </p>
+            </div>
+        </div>
+        <div class="go-top">
+            <a href="#virsus">↳ Grįžti į viršų</a>
+        </div>
+    </section>
+
+    <section class="section" id="filosofija">
+        <h2>Klubo tikslai ir filosofija</h2>
+        <p>
+            Sporto klubo „Faiteris“ tikslas - ne tik išmokyti kovos technikos, bet ir padėti vaikams bei suaugusiems augti kaip asmenybėms. 
+            Čia kiekvienas žingsnis, kiekvienas pratimas ir kiekviena treniruotė veda link stipresnio, sveikesnio ir labiau pasitikinčio savimi žmogaus.
+        </p>
+        <div class="list-columns">
+            <div>
+                <strong>Klubo tikslai:</strong>
+                <ul>
+                    <li>Populiarinti kūno kultūrą, sportą ir sveiką gyvenimo būdą.</li>
+                    <li>Sudaryti sąlygas harmoningam asmenybės vystymuisi.</li>
+                    <li>Stiprinti kūną, lavinti protą ir ugdyti vidinę discipliną.</li>
+                    <li>Skatinti žmones sportuoti ir augti kiekvieną dieną.</li>
+                    <li>Kurti saugią erdvę prasmingam laisvalaikiui ir bendrystei.</li>
+                </ul>
+            </div>
+            <div>
+                <strong>SK „Faiteris“ filosofija:</strong>
+                <ul>
+                    <li>Kiekvienas žmogus yra unikalus ir vertingas.</li>
+                    <li>Gyvenimas - kelionė, o ne tikslas. Svarbu mėgautis procesu.</li>
+                    <li>Niekada nevėlu pradėti - tiek vaikui, tiek suaugusiam.</li>
+                    <li>Laimingi tie, kurie daugiau duoda nei ima.</li>
+                    <li>Didžiausia pergalė - kova su savimi ir savo ribomis.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="quote">
+            „Kiekvienas, žengęs į salę, tampa geresne savo versija. Čia užgimsta jėga, disciplina ir pasitikėjimas savimi.“
+        </div>
+    </section>
+
+    <section class="section" id="kontaktai">
+        <h2>Kontaktai ir daugiau informacijos</h2>
+        <p>
+            Daugiau naujienų, nuotraukų ir kasdienių akimirkų iš treniruočių – mūsų Facebook paskyroje.
+        </p>
+        <p>
+            <a href="https://www.facebook.com/faiteris.lt" target="_blank" rel="noopener noreferrer">
+                ➜ Apsilankykite SK „Faiteris“ Facebook puslapyje
+            </a>
+        </p>
+        <p class="note">
+            Jei turite klausimų dėl treniruočių, amžiaus grupių ar tvarkaraščio, susisiekite su mumis per Facebook žinutę arba 
+            organizatoriaus nurodytu telefonu / el. paštu.
+        </p>
+    </section>
+
+    <footer class="footer">
+        <div>© <span id="year"></span> SK „Faiteris“.</div>
+    </footer>
+</main>
+
+<script>
+    // Dinaminiai metai footeryje
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script>
+// Smooth scroll with header offset and temporary highlight glow on target
+(function(){
+    function onInternalLinkClick(e){
+        var link = e.currentTarget;
+        var href = link.getAttribute('href');
+        if(!href || href.charAt(0) !== '#') return;
+        var id = href.slice(1);
+        if(!id) return; // ignore href="#" or empty
+        var target = document.getElementById(id);
+        if(!target) return; // no target found
+
+        e.preventDefault();
+
+        var header = document.querySelector('header');
+        var headerHeight = header ? header.getBoundingClientRect().height : 0;
+        var extraGap = 8; // visual gap between header and target
+        var targetTop = window.scrollY + target.getBoundingClientRect().top - headerHeight - extraGap;
+
+        // perform smooth scroll to computed position
+        var start = window.scrollY;
+        var distance = Math.abs(targetTop - start);
+        var duration = Math.min(1200, Math.max(350, Math.round(distance * 0.6)));
+        window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+
+        // add glow shortly after scroll starts; delay approx equals duration
+        setTimeout(function(){
+            // Add class to highlight the element (will auto-fade via CSS animation)
+            target.classList.add('highlight-glow');
+            // Remove class after 3s (match animation length)
+            setTimeout(function(){ target.classList.remove('highlight-glow'); }, 3000);
+        }, duration + 60);
+
+        // Also update the hash in the address bar without jumping
+        history.pushState && history.pushState(null, '', '#' + id);
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+        // Attach listener to same-page anchor links only
+        var anchors = Array.prototype.slice.call(document.querySelectorAll('a[href^="#"]'));
+        anchors.forEach(function(a){
+            // skip links that open nothing or that are used for JS elsewhere
+            var href = a.getAttribute('href');
+            if(!href || href === '#' ) return;
+            // If the link has target or external behavior, skip
+            if(a.hasAttribute('target') && a.getAttribute('target') !== '_self') return;
+            a.addEventListener('click', onInternalLinkClick);
+        });
+    });
+})();
+</script>
 </body>
 </html>
