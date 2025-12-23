@@ -8,28 +8,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Praleisti į turinį</a>
 <header>
+    <div role="banner">
     <div class="nav">
         <div class="logo">
-            <img class="logo-img" src="images/logo.png">
+            <img class="logo-img" src="images/logo.png" alt="SK Faiteris logotipas" loading="lazy">
             <div>
                 <div>SK „Faiteris“</div>
                 <div class="logo-sub">Treniruotės vaikams, jaunimui ir suaugusiems</div>
             </div>
         </div>
-        <nav class="nav-links">
-            <a href="#miestai">Miestai</a>
+        <nav class="nav-links" aria-label="Pagrindinė navigacija">
             <a href="#jonava">Jonava</a>
             <a href="#vilnius">Vilnius</a>
+            <a href="#kontaktai">Kontaktai</a>
             <a href="#filosofija">Filosofija</a>
         </nav>
         <a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLScOUvPXCVpUuygdbUQD_TSf3axQzrNKGXCJ5cl5yPjJLrwEpA/viewform" target="_blank" rel="noopener noreferrer">
             Registracija
         </a>
     </div>
+    </div>
 </header>
 
 <main class="page">
+    <!-- main landmark for skip-link target -->
+    <div id="main-content"></div>
     <section class="hero" id="virsus">
         <div>
             
@@ -53,39 +58,51 @@
                 Tvarkaraščiai ir laikai gali keistis, nes priklauso nuo salių nuomos. Naujausią informaciją visada patikslinsime jums užsiregistravus.
             </p>
         </div>
-        <aside class="hero-card" aria-label="Trumpa informacija apie klubą">
-            <div class="hero-card-inner">
-                <div class="badge">
-                    <span class="badge-dot"></span>
-                    <span>Judėjimo džiaugsmui ir pasitikėjimui savimi</span>
-                </div>
-                <h2>Treniruotės vaikams ir jaunimui</h2>
-                <p>
-                    Fizinio aktyvumo užsiėmimai, grappling imtynės, MMA, K-1, kikboksas ir savigyna - tiek pradedantiesiems, tiek pažengusiems.
-                </p>
-                <div class="hero-grid">
-                    <div class="hero-pill">
-                        <div class="hero-pill-label">Miestai</div>
-                        <div class="hero-pill-value">Vilnius ir Jonava</div>
+        <!-- Right column: stacked hero cards (vaikai + suaugusieji) -->
+        <aside class="hero-side" aria-label="Trumpa informacija apie treniruotes">
+            <div class="hero-card">
+                <div class="hero-card-inner">
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        <span>Judėjimo džiaugsmui ir pasitikėjimui savimi</span>
                     </div>
-                    <div class="hero-pill">
-                        <div class="hero-pill-label">Amžius</div>
-                        <div class="hero-pill-value">Vaikai, paaugliai, jaunimas</div>
-                    </div>
-                    <div class="hero-pill">
-                        <div class="hero-pill-label">Pagrindas</div>
-                        <div class="hero-pill-value">Judėjimas · Drausmė · Bendrystė</div>
-                    </div>
-                    <div class="hero-pill">
-                        <div class="hero-pill-label">Papildomai</div>
-                        <div class="hero-pill-value">Sveikatingumas ir projektai</div>
+                    <h2>Treniruotės vaikams ir jaunimui</h2>
+                    <p>
+                        Fizinio aktyvumo užsiėmimai, grappling imtynės, MMA, K-1, kikboksas ir savigyna - tiek pradedantiesiems, tiek pažengusiems.
+                    </p>
+                    <div class="hero-grid">
+                        <div class="hero-pill">
+                            <div class="hero-pill-label">Miestai</div>
+                            <div class="hero-pill-value"><a href="#vilnius">Vilnius</a> ir <a href="#jonava">Jonava</a></div>
+                        </div>
+                        <div class="hero-pill">
+                            <div class="hero-pill-label">Amžius</div>
+                            <div class="hero-pill-value">Vaikai, paaugliai, jaunimas</div>
+                        </div>
                     </div>
                 </div>
-                <p class="hero-footnote">
-                    Kiekvienas, žengęs į salę, tampa geresne savo versija - treniruotė po treniruotės.
-                </p>
+            </div>
+
+            <div class="hero-card">
+                <div class="hero-card-inner">
+                    <h2>Treniruotės Suaugusiems</h2>
+                    <p>
+                        Fizinio aktyvumo užsiėmimai, grappling imtynės, MMA, K-1, kikboksas ir savigyna - tiek pradedantiesiems, tiek pažengusiems.
+                    </p>
+                    <div class="hero-grid">
+                        <div class="hero-pill">
+                            <div class="hero-pill-label">Miestai</div>
+                            <div class="hero-pill-value"><a href="#vilnius">Vilnius</a></div>
+                        </div>
+                        <div class="hero-pill">
+                            <div class="hero-pill-label">Amžius</div>
+                            <div class="hero-pill-value"><a href="#radvilu">Suaugusiems</a></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </aside>
+        
     </section>
 
     <section class="section" id="miestai">
@@ -195,7 +212,7 @@
                 </p>
             </div>
 
-            <div class="gym-card">
+            <div class="gym-card" id="radvilu">
                 <div class="gym-header">
                     <div class="gym-title">Radvilų gimnazija (Šeškinė)</div>
                     <div class="gym-address">Vilnius (Šeškinės mikrorajonas)</div>
@@ -206,9 +223,10 @@
                     <span class="pill">K-1</span>
                     <span class="pill">Grappling imtynės</span>
                     <span class="pill">Savigynos užsiėmimai</span>
+                    <span class="pill">Suaugusiems</span>
                 </div>
                 <div class="gym-time">
-                    <strong>Laikas:</strong> pirmadienis, antradienis, trečiadienis ir ketvirtadienis (I, II, III, IV) – 18:00
+                    <strong>Laikas:</strong> pirmadienis, antradienis, trečiadienis ir ketvirtadienis (I, II, III, IV) - 18:00
                 </div>
                 <p class="note">
                     Intensyvesnės treniruotės vyresniems vaikams ir jaunimui. Tvarkaraštis gali šiek tiek kisti.
@@ -266,8 +284,12 @@
                 </ul>
             </div>
         </div>
+    <a href="#" id="watch-video" class="nav-cta" data-video="https://youtube.com/embed/geFnu12EGbs">Žiūrėti video</a>
         <div class="quote">
             „Kiekvienas, žengęs į salę, tampa geresne savo versija. Čia užgimsta jėga, disciplina ir pasitikėjimas savimi.“
+        </div>
+        <div class="go-top">
+            <a href="#virsus">↳ Grįžti į viršų</a>
         </div>
     </section>
 
@@ -278,13 +300,16 @@
         </p>
         <p>
             <a href="https://www.facebook.com/faiteris.lt" target="_blank" rel="noopener noreferrer" class="nav-cta">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook icon" class="facebook-icon"> Apsilankykite SK „Faiteris“ Facebook puslapyje
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook icon" class="facebook-icon"> Apsilankykite Facebook puslapyje
             </a>
         </p>
         <p class="note">
             Jei turite klausimų dėl treniruočių, amžiaus grupių ar tvarkaraščio, susisiekite su mumis per Facebook žinutę arba 
-            organizatoriaus nurodytu telefonu / el. paštu.
+             telefonu / el. paštu.
         </p>
+        <div class="go-top">
+            <a href="#virsus">↳ Grįžti į viršų</a>
+        </div>
     </section>
 
     <footer class="footer">
@@ -292,60 +317,6 @@
     </footer>
 </main>
 
-<script>
-    // Dinaminiai metai footeryje
-    document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-<script>
-// Smooth scroll with header offset and temporary highlight glow on target
-(function(){
-    function onInternalLinkClick(e){
-        var link = e.currentTarget;
-        var href = link.getAttribute('href');
-        if(!href || href.charAt(0) !== '#') return;
-        var id = href.slice(1);
-        if(!id) return; // ignore href="#" or empty
-        var target = document.getElementById(id);
-        if(!target) return; // no target found
-
-        e.preventDefault();
-
-        var header = document.querySelector('header');
-        var headerHeight = header ? header.getBoundingClientRect().height : 0;
-        var extraGap = 8; // visual gap between header and target
-        var targetTop = window.scrollY + target.getBoundingClientRect().top - headerHeight - extraGap;
-
-        // perform smooth scroll to computed position
-        var start = window.scrollY;
-        var distance = Math.abs(targetTop - start);
-        var duration = Math.min(1200, Math.max(350, Math.round(distance * 0.6)));
-        window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
-
-        // add glow shortly after scroll starts; delay approx equals duration
-        setTimeout(function(){
-            // Add class to highlight the element (will auto-fade via CSS animation)
-            target.classList.add('highlight-glow');
-            // Remove class after 3s (match animation length)
-            setTimeout(function(){ target.classList.remove('highlight-glow'); }, 3000);
-        }, duration + 60);
-
-        // Also update the hash in the address bar without jumping
-        history.pushState && history.pushState(null, '', '#' + id);
-    }
-
-    document.addEventListener('DOMContentLoaded', function(){
-        // Attach listener to same-page anchor links only
-        var anchors = Array.prototype.slice.call(document.querySelectorAll('a[href^="#"]'));
-        anchors.forEach(function(a){
-            // skip links that open nothing or that are used for JS elsewhere
-            var href = a.getAttribute('href');
-            if(!href || href === '#' ) return;
-            // If the link has target or external behavior, skip
-            if(a.hasAttribute('target') && a.getAttribute('target') !== '_self') return;
-            a.addEventListener('click', onInternalLinkClick);
-        });
-    });
-})();
-</script>
+<script src="scripts.js"></script>
 </body>
 </html>
