@@ -91,6 +91,10 @@ header {
 
 .logo { display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:0.03em; }
 
+.logo-img {
+    width:32px; height:32px;
+}
+
 .logo-mark {
     width:32px; height:32px; border-radius:999px;
     background: radial-gradient(circle at 30% 30%, var(--accent), var(--accent-2) 55%, var(--logo-mark-end) 100%);
@@ -213,6 +217,8 @@ header {
 
 .footer a { color:var(--muted); text-decoration:underline; text-decoration-style:dotted; }
 
+.link { color:var(--accent); text-decoration:underline; text-decoration-style:dotted; }
+
 @media (max-width: 820px) { .hero { grid-template-columns:minmax(0,1fr); } }
 
 @media (max-width:700px) {
@@ -244,8 +250,4 @@ header {
     20% { box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.18), 0 14px 46px rgba(var(--accent-rgb), 0.10); }
     60% { box-shadow: 0 0 0 2px rgba(var(--accent-rgb), 0.10), 0 8px 30px rgba(var(--accent-rgb), 0.06); }
     100% { box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0.00), 0 0 0 rgba(var(--accent-rgb), 0.00); }
-}
-.link {
-    color: blue;
-    
 }
