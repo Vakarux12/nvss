@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function(){
     // 1) Dynamic year in footer
     try{
@@ -8,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     // 2) Smooth scroll with header offset and temporary highlight glow on target
     (function(){
+        var headerEl = document.querySelector('header');
         function onInternalLinkClick(e){
             var link = e.currentTarget;
             var href = link.getAttribute('href');
@@ -19,8 +19,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
             e.preventDefault();
 
-            var header = document.querySelector('header');
-            var headerHeight = header ? header.getBoundingClientRect().height : 0;
+            var headerHeight = headerEl ? headerEl.getBoundingClientRect().height : 0;
             var extraGap = 8; // visual gap between header and target
             var targetTop = window.scrollY + target.getBoundingClientRect().top - headerHeight - extraGap;
 
@@ -44,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function(){
             }
         }
 
-        // Attach listener to same-page anchor links only
-        var anchors = Array.prototype.slice.call(document.querySelectorAll('a[href^="#"]'));
+        // Attach listener to same-page anchor links only (cache selectors for perf)
+        var anchors = document.querySelectorAll('a[href^="#"]');
         anchors.forEach(function(a){
             var href = a.getAttribute('href');
             if(!href || href === '#' ) return;
@@ -115,6 +114,9 @@ document.addEventListener('DOMContentLoaded', function(){
             }
             window.addEventListener('keydown', onKey);
 
+            // expose some internals for focus management
+            overlay._closeBtn = closeBtn;
+
             return { overlay: overlay, close: close, closeBtn: closeBtn };
         }
 
@@ -151,19 +153,27 @@ document.addEventListener('DOMContentLoaded', function(){
         updateMeasurements();
         window.addEventListener('resize', updateMeasurements);
 
+        // Throttle scroll handler using requestAnimationFrame to reduce layout thrashing
+        var ticking = false;
         window.addEventListener('scroll', function(){
-            var currentScrollPos = window.pageYOffset || 0;
-            var headerBottom = headerDiv._bottom || headerDiv.offsetHeight;
+            if (!ticking) {
+                window.requestAnimationFrame(function(){
+                    var currentScrollPos = window.pageYOffset || 0;
+                    var headerBottom = headerDiv._bottom || headerDiv.offsetHeight;
 
-            if (prevScrollpos > currentScrollPos || currentScrollPos < headerBottom){
-                // scrolling up OR haven't passed header -> show
-                headerDiv.style.top = '0';
-            } else {
-                // scrolling down and passed header -> hide
-                headerDiv.style.top = '-' + (headerDiv._height || headerDiv.offsetHeight) + 'px';
+                    if (prevScrollpos > currentScrollPos || currentScrollPos < headerBottom){
+                        // scrolling up OR haven't passed header -> show
+                        headerDiv.style.top = '0';
+                    } else {
+                        // scrolling down and passed header -> hide
+                        headerDiv.style.top = '-' + (headerDiv._height || headerDiv.offsetHeight) + 'px';
+                    }
+
+                    prevScrollpos = currentScrollPos;
+                    ticking = false;
+                });
+                ticking = true;
             }
-
-            prevScrollpos = currentScrollPos;
         }, { passive: true });
     })();
 
