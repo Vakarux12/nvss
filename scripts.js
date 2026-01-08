@@ -54,6 +54,74 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     })();
 
+    // 5) Terms of Service confirmation modal: show on register click, require checkbox, open link
+    (function(){
+        // find any element that carries a data-tos-link attribute
+        var tosTriggers = document.querySelectorAll('[data-tos-link]');
+        if(!tosTriggers || tosTriggers.length === 0) return;
+
+        var overlay = document.getElementById('tosOverlay');
+        if(!overlay) return;
+        var closeBtn = overlay.querySelector('.tos-close');
+        var cancelBtn = overlay.querySelector('.tos-cancel');
+        var confirmBtn = overlay.querySelector('#tosConfirm');
+        var agreeCheckbox = overlay.querySelector('#tosAgree');
+
+        function openModal(link){
+            overlay.hidden = false;
+            overlay.setAttribute('aria-hidden','false');
+            // prevent background scroll
+            document.body.style.overflow = 'hidden';
+            // store link to open on confirm
+            overlay._targetLink = link;
+            // reset checkbox and confirm button
+            try{ if(agreeCheckbox) agreeCheckbox.checked = false; }catch(e){}
+            try{ if(confirmBtn) confirmBtn.disabled = true; }catch(e){}
+            // remember focus for restoration
+            try{ overlay._previousFocus = document.activeElement; }catch(e){}
+            // focus the checkbox for accessibility
+            setTimeout(function(){ try{ if(agreeCheckbox) agreeCheckbox.focus(); }catch(e){} }, 80);
+        }
+
+        function closeModal(){
+            try{ overlay.hidden = true; overlay.setAttribute('aria-hidden','true'); }catch(e){}
+            document.body.style.overflow = '';
+            overlay._targetLink = null;
+            // restore focus
+            try{ if(overlay._previousFocus && typeof overlay._previousFocus.focus === 'function') overlay._previousFocus.focus(); }catch(e){}
+        }
+
+        tosTriggers.forEach(function(t){
+            t.addEventListener('click', function(e){
+                e.preventDefault();
+                var link = t.getAttribute('data-tos-link') || t.dataset.tosLink || null;
+                openModal(link);
+            });
+        });
+
+        if(closeBtn) closeBtn.addEventListener('click', closeModal);
+        if(cancelBtn) cancelBtn.addEventListener('click', closeModal);
+
+        // click outside modal closes
+        overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
+
+        // ESC closes
+        window.addEventListener('keydown', function(e){ if(e.key === 'Escape' && overlay && !overlay.hidden) closeModal(); });
+
+        if(agreeCheckbox){
+            agreeCheckbox.addEventListener('change', function(){ if(confirmBtn) confirmBtn.disabled = !agreeCheckbox.checked; });
+        }
+
+        if(confirmBtn){
+            confirmBtn.addEventListener('click', function(e){
+                if(confirmBtn.disabled) return;
+                var link = overlay && overlay._targetLink ? overlay._targetLink : null;
+                closeModal();
+                if(link){ try{ window.open(link, '_blank', 'noopener'); }catch(e){ window.location.href = link; } }
+            });
+        }
+    })();
+
     // 3) Video modal: open/close, blur/dim background and lock scroll
     (function(){
         var trigger = document.getElementById('watch-video');

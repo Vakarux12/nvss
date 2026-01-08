@@ -25,9 +25,8 @@
             <a href="#kontaktai">Kontaktai</a>
             <a href="#filosofija">Filosofija</a>
         </nav>
-        <a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLScOUvPXCVpUuygdbUQD_TSf3axQzrNKGXCJ5cl5yPjJLrwEpA/viewform" target="_blank" rel="noopener noreferrer">
-            Registracija
-        </a>
+        <button id="registerBtn" class="nav-cta" type="button" data-tos-link="https://docs.google.com/forms/d/e/1FAIpQLScOUvPXCVpUuygdbUQD_TSf3axQzrNKGXCJ5cl5yPjJLrwEpA/viewform">
+            Registracija</button>
     </div>
     </div>
 </header>
@@ -46,9 +45,9 @@
                 Treniruotėse deriname fizinį aktyvumą, savigyną ir kovos menus - saugioje, draugiškoje aplinkoje.
             </p>
             <div class="hero-actions">
-                <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScOUvPXCVpUuygdbUQD_TSf3axQzrNKGXCJ5cl5yPjJLrwEpA/viewform" target="_blank" rel="noopener noreferrer">
+                <button id="heroRegisterBtn" class="btn-primary" type="button" data-tos-link="https://docs.google.com/forms/d/e/1FAIpQLScOUvPXCVpUuygdbUQD_TSf3axQzrNKGXCJ5cl5yPjJLrwEpA/viewform">
                     Registruotis į treniruotes
-                </a>
+                </button>
                 <a class="btn-ghost" href="#miestai">
                     <span class="icon">📍</span>
                     Rasti artimiausią salę
@@ -303,6 +302,11 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook icon" class="facebook-icon"> Apsilankykite Facebook puslapyje
             </a>
         </p>
+        <p>
+            <a href="mailto:sk.faiteris@inbox.lt" class="nav-cta">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail icon" class="gmail-icon"> Parašykite mums paštu
+            </a>
+        </p>
         <p class="note">
             Jei turite klausimų dėl treniruočių, amžiaus grupių ar tvarkaraščio, susisiekite su mumis per Facebook žinutę arba 
              telefonu / el. paštu.
@@ -320,3 +324,32 @@
 <script src="scripts.js" defer></script>
 </body>
 </html>
+
+<!-- Terms of Service modal (hidden by default) -->
+<div id="tosOverlay" class="tos-overlay" aria-hidden="true" hidden>
+    <div class="tos-modal" role="dialog" aria-modal="true" aria-labelledby="tosTitle">
+        <button class="tos-close" aria-label="Uždaryti">✕</button>
+        <h2 id="tosTitle">Naudojimosi sąlygos</h2>
+        <div class="tos-body" id="tosContent">
+            <h2><strong>Patvirtinu ir sutinku:</strong></h2>
+            <ul>
+                <li>kad mano (ar mano vaiko) sveikatos būklė atitinka reikalavimus ir leidžia dalyvauti treniruotėse;</li>
+                <li>įsipareigoju raštu informuoti klubo vadovybę apie visus sveikatos sutrikimus, galinčius įtakoti dalyvavimą;</li>
+                <li>esame susipažinę su klubo įstatais, vidaus taisyklėmis ir saugos reikalavimais ir įsipareigojame jų laikytis;</li>
+                <li>už savo (ar savo vaiko) sveikatą ir saugumą treniruočių metu esame atsakingi patys;</li>
+                <li>sutinku, kad esant būtinybei mano vaikui gali būti suteikta pirmoji medicinos pagalba;</li>
+                <li>sutinku, kad klubo atstovai gali fotografuoti ir filmuoti treniruočių metu ir naudoti medžiagą klubo komunikacijoje;</li>
+                <li>sutinku, kad sporto klubas tvarkytų mano asmens duomenis ir siųstų su klubu susijusius pranešimus.</li>
+            </ul>
+
+            <p><strong>Atsakomybė:</strong> Dalyvaujant treniruotėse dalyvavimas vyksta dalyvio rizika. Klubas neatsako už traumas, atsiradusias dėl taisyklių nesilaikymo arba dalyvio savarankiško elgesio.</p>
+
+            <p><strong>Nuotolinės treniruotės:</strong> Sutinku dalyvauti nuotoliniuose užsiėmimuose, jeigu tokių bus organizuojama.</p>
+        </div>
+        <label class="tos-agree"><input id="tosAgree" type="checkbox"> Aš perskaičiau (-au) ir sutinku su naudojimosi sąlygomis.</label>
+        <div class="tos-actions">
+            <button class="tos-cancel">Atšaukti</button>
+            <button id="tosConfirm" class="tos-confirm" disabled>Patvirtinti ir tęsti</button>
+        </div>
+    </div>
+</div>
